@@ -133,11 +133,21 @@ public class CalculatorTest {
     }
 
     @Test
+    public void should_evaluate_addition_after_drop() throws Exception {
+        assertThat(calculator.evaluate("4 3 5 drop +")).isEqualTo(7);
+    }
+
+    @Test
+    public void should_evaluate_power() throws Exception {
+        assertThat(calculator.evaluate("2 3 ^")).isEqualTo(8);
+    }
+
+    @Test
     public void should_raise_invalid_operator_exception() throws Exception {
         try {
-            calculator.evaluate("4 3 ^");
+            calculator.evaluate("4 3 #");
         } catch (InvalidOperatorException e) {
-            assertThat(e.getMessage()).isEqualTo("Operator '^' is not implemented in the calculator.");
+            assertThat(e.getMessage()).isEqualTo("Operator '#' is not implemented in the calculator.");
         }
     }
 

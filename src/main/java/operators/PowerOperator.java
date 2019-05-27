@@ -4,8 +4,8 @@ import exceptions.NotEnoughOperandException;
 
 import java.util.Stack;
 
-public class SwapOperator implements Operator {
-    public String token = "swap";
+public class PowerOperator implements Operator {
+    public String token = "^";
 
     public void calculate(Stack<Double> stack) throws NotEnoughOperandException {
         if(stack.size() < 2)
@@ -14,8 +14,7 @@ public class SwapOperator implements Operator {
         double secondValue = stack.pop();
         double firstValue = stack.pop();
 
-        stack.push(secondValue);
-        stack.push(firstValue);
+        stack.push(Math.pow(firstValue, secondValue));
     }
 
     public String getToken() {

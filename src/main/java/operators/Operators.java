@@ -18,6 +18,8 @@ public class Operators {
                 add(new DivideOperator());
                 add(new AbsOperator());
                 add(new SwapOperator());
+                add(new DropOperator());
+                add(new PowerOperator());
             }
         };
     }
