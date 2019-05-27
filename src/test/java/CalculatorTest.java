@@ -113,6 +113,21 @@ public class CalculatorTest {
     }
 
     @Test
+    public void should_evaluate_absolute_value_with_negative_number() throws Exception {
+        assertThat(calculator.evaluate("-8 abs")).isEqualTo(8);
+    }
+
+    @Test
+    public void should_evaluate_absolute_value_with_positive_number() throws Exception {
+        assertThat(calculator.evaluate("8 abs")).isEqualTo(8);
+    }
+
+    @Test
+    public void should_evaluate_absolute_value_with_negative_number_and_multiplication() throws Exception {
+        assertThat(calculator.evaluate("-8 abs 3 *")).isEqualTo(24);
+    }
+
+    @Test
     public void should_raise_invalid_operator_exception() throws Exception {
         try {
             calculator.evaluate("4 3 ^");

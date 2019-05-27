@@ -20,7 +20,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="RPN" target="1.5" />
+      <module name="RPN" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>
