@@ -17,6 +17,7 @@ public class Operators {
                 add(new TimesOperator());
                 add(new DivideOperator());
                 add(new AbsOperator());
+                add(new SwapOperator());
             }
         };
     }

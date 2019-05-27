@@ -2,6 +2,7 @@ package operators;
 
 import exceptions.NotEnoughOperandException;
 import java.util.Stack;
+
 import static java.lang.StrictMath.abs;
 
 public class AbsOperator implements Operator {
@@ -13,6 +14,7 @@ public class AbsOperator implements Operator {
 
         double value = stack.pop();
         stack.push(abs(value));
+
     }
 
     public String getToken() {

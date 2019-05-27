@@ -128,6 +128,11 @@ public class CalculatorTest {
     }
 
     @Test
+    public void should_evaluate_subtraction_after_swap() throws Exception {
+        assertThat(calculator.evaluate("4 3 swap -")).isEqualTo(-1);
+    }
+
+    @Test
     public void should_raise_invalid_operator_exception() throws Exception {
         try {
             calculator.evaluate("4 3 ^");
