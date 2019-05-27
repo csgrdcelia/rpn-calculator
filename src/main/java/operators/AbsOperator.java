@@ -13,8 +13,8 @@ public class AbsOperator implements Operator {
             throw new NotEnoughOperandException(this);
 
         double value = stack.pop();
-        stack.push(abs(value));
 
+        stack.push(abs(value));
     }
 
     public String getToken() {

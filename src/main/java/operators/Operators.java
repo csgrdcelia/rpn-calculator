@@ -10,7 +10,20 @@ public class Operators {
     private List<Operator> operators;
 
     public Operators() {
-        operators = new ArrayList<Operator>() {
+        this.operators = getListOfOperators();
+    }
+
+    public Operator find(String token) throws InvalidOperatorException {
+        for (Operator operator : operators) {
+            if (operator.getToken().equals(token)) {
+                return operator;
+            }
+        }
+        throw new InvalidOperatorException(token);
+    }
+
+    private List<Operator> getListOfOperators() {
+        return new ArrayList<Operator>() {
             {
                 add(new MinusOperator());
                 add(new AddOperator());
@@ -22,14 +35,5 @@ public class Operators {
                 add(new PowerOperator());
             }
         };
-    }
-
-    public Operator find(String token) throws InvalidOperatorException {
-        for (Operator operator : operators) {
-            if (operator.getToken().equals(token)) {
-                return operator;
-            }
-        }
-        throw new InvalidOperatorException(token);
     }
 }

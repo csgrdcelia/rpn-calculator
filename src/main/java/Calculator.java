@@ -1,4 +1,3 @@
-import operators.Operator;
 import operators.Operators;
 
 import java.util.Stack;
@@ -6,30 +5,26 @@ import java.util.Stack;
 public class Calculator {
 
     private Operators operators;
-    private Stack<Double> stack;
+    private Stack<Double> operands;
 
     public Calculator() {
         operators = new Operators();
-        stack = new Stack();
+        operands = new Stack();
     }
 
     public double evaluate(String expression) throws Exception {
 
-        Tokenizer tokenizer = new Tokenizer();
-
-        String[] tokens = tokenizer.tokenize(expression);
+        String[] tokens = new Tokenizer().tokenize(expression);
 
         for (String token : tokens) {
-
             if(isNumber(token)) {
-                stack.push(Double.valueOf(token));
-                continue;
+                operands.push(Double.valueOf(token));
+            } else {
+                operators.find(token).calculate(operands);
             }
-
-            operators.find(token).calculate(stack);
         }
 
-        return stack.pop();
+        return operands.pop();
     }
 
     private boolean isNumber(String token) {
