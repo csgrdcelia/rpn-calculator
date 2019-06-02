@@ -5,7 +5,7 @@ import exceptions.NotEnoughOperandException;
 import java.util.Stack;
 
 public class PowerOperator implements Operator {
-    public String token = "^";
+    private String token = "^";
 
     public void calculate(Stack<Double> stack) throws NotEnoughOperandException {
         if(stack.size() < 2)

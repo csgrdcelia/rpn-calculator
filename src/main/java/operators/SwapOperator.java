@@ -5,7 +5,7 @@ import exceptions.NotEnoughOperandException;
 import java.util.Stack;
 
 public class SwapOperator implements Operator {
-    public String token = "swap";
+    private String token = "swap";
 
     public void calculate(Stack<Double> stack) throws NotEnoughOperandException {
         if(stack.size() < 2)
